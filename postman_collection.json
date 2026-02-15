@@ -1,0 +1,90 @@
+{
+  "info": {
+    "name": "Library API - Sample Collection",
+    "_postman_id": "b6e2b7d8-0000-4000-8000-000000000001",
+    "description": "Sample requests for testing the Library API and related example endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Books - Get All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/books",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api","books"]
+        }
+      }
+    },
+    {
+      "name": "Books - Get By ID (1)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/books/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api","books","1"]
+        }
+      }
+    },
+    {
+      "name": "Books - Search by Title",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/books/search?title=Clean",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api","books","search"],
+          "query": [
+            { "key": "title", "value": "Clean" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Books - Create (POST)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": 4,\n  \"title\": \"Design Patterns\",\n  \"author\": \"Gang of Four\",\n  \"isbn\": \"978-0201633610\",\n  \"publicationYear\": 1994\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/books",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api","books"]
+        }
+      }
+    },
+    {
+      "name": "Books - Delete (id)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/books/4",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api","books","4"]
+        }
+      }
+    }
+  ]
+}
